@@ -1,0 +1,508 @@
+
+                                            #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                            # Date d'extraction : 23/01/2025
+                                            #-----------------------------------------------------------------------------
+                                            # Ensemble	: EXPLORE2 2024 
+                                            # Experience	: Historique - rcp85
+                                            # Forcage atmos : HadGEM2-ES_CCLM4-8-17/MF-ADAMONT
+                                            # Modele hydro : SIM2
+                                            #-----------------------------------------------------------------------------
+                                            # Indices en série temporelle 
+                                            #	VCN10 : (m³/s)Minimum annuel de la moyenne sur 10 jours du débit journalier
+                                            #----------------------------------------------------------------------------- 
+                                            # Format des enregistrements # 
+                                            Index;Code_hydro;Nom;L93_X;L93_Y;LII_X;LII_Y;Latitude;Longitude;Surface_Bassin;Period_Calcul_Indicateur;Region_hydro;Contexte;Année;Saison;VCN10
+                                            #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                            Index;Code_hydro;Nom;L93_X;L93_Y;LII_X;LII_Y;Latitude;Longitude;Surface_Bassin;Period_Calcul_Indicateur;Region_hydro;Contexte;Année;Saison;VCN10
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1976;MJJASON;2.796551
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1977;MJJASON;3.1377664
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1978;MJJASON;2.9710996
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1979;MJJASON;2.509537
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1980;MJJASON;4.205648
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1981;MJJASON;2.389919
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1982;MJJASON;2.5124075
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1983;MJJASON;2.5130787
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1984;MJJASON;2.1809144
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1985;MJJASON;2.1852431
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1986;MJJASON;2.379757
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1987;MJJASON;2.4350116
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1988;MJJASON;3.3867245
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1989;MJJASON;2.7759144
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1990;MJJASON;2.6693404
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1991;MJJASON;2.5595834
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1992;MJJASON;2.6810994
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1993;MJJASON;2.3841088
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1994;MJJASON;2.6035185
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1995;MJJASON;3.2012963
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1996;MJJASON;2.5515394
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1997;MJJASON;2.4420834
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1998;MJJASON;1.8667362
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1999;MJJASON;3.0040972
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2000;MJJASON;1.9981596
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2001;MJJASON;2.6003473
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2002;MJJASON;2.4006019
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2003;MJJASON;1.9951736
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2004;MJJASON;3.9933913
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2005;MJJASON;2.242859
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2006;MJJASON;1.1740394
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2007;MJJASON;2.4613543
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2008;MJJASON;3.7446527
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2009;MJJASON;2.5979745
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2010;MJJASON;3.2855093
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2011;MJJASON;3.097338
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2012;MJJASON;2.3441088
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2013;MJJASON;2.8619096
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2014;MJJASON;2.6020486
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2015;MJJASON;3.3956828
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2016;MJJASON;2.5101273
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2017;MJJASON;2.9200926
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2018;MJJASON;2.7712038
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2019;MJJASON;2.2086573
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2020;MJJASON;2.0153472
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2021;MJJASON;2.536088
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2022;MJJASON;3.002338
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2023;MJJASON;2.289051
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2024;MJJASON;1.8065162
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2025;MJJASON;2.433391
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2026;MJJASON;1.6204282
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2027;MJJASON;2.2288542
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2028;MJJASON;2.5424306
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2029;MJJASON;2.4791436
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2030;MJJASON;1.7820139
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2031;MJJASON;1.482419
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2032;MJJASON;2.7502084
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2033;MJJASON;3.3987384
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2034;MJJASON;2.9734027
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2035;MJJASON;2.3053703
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2036;MJJASON;2.7951968
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2037;MJJASON;2.2806365
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2038;MJJASON;2.752882
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2039;MJJASON;3.040023
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2040;MJJASON;3.0238543
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2041;MJJASON;2.1577547
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2042;MJJASON;2.4685647
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2043;MJJASON;2.645868
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2044;MJJASON;2.6692476
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2045;MJJASON;2.4497917
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2046;MJJASON;2.492419
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2047;MJJASON;2.4283218
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2048;MJJASON;2.491713
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2049;MJJASON;2.4137385
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2050;MJJASON;1.5598495
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2051;MJJASON;3.3557525
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2052;MJJASON;2.3132176
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2053;MJJASON;2.5933332
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2054;MJJASON;2.565787
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2055;MJJASON;1.6263194
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2056;MJJASON;3.4067478
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2057;MJJASON;2.754514
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2058;MJJASON;2.0403008
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2059;MJJASON;2.2627084
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2060;MJJASON;1.606574
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2061;MJJASON;1.207176
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2062;MJJASON;2.2019792
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2063;MJJASON;2.5073612
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2064;MJJASON;2.307882
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2065;MJJASON;2.5432985
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2066;MJJASON;2.5066783
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2067;MJJASON;3.4772453
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2068;MJJASON;2.545104
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2069;MJJASON;2.46375
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2070;MJJASON;1.7254745
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2071;MJJASON;2.4384954
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2072;MJJASON;2.4272454
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2073;MJJASON;2.9537385
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2074;MJJASON;2.0063658
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2075;MJJASON;2.54081
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2076;MJJASON;2.3786805
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2077;MJJASON;2.09978
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2078;MJJASON;2.5161111
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2079;MJJASON;2.4810069
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2080;MJJASON;1.8978472
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2081;MJJASON;2.4852545
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2082;MJJASON;2.761898
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2083;MJJASON;2.4371066
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2084;MJJASON;3.4402661
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2085;MJJASON;2.7675462
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2086;MJJASON;2.6594443
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2087;MJJASON;2.836331
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2088;MJJASON;2.3653357
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2089;MJJASON;1.852963
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2090;MJJASON;2.107338
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2091;MJJASON;0.6739896
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2092;MJJASON;1.9549885
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2093;MJJASON;1.3896991
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2094;MJJASON;2.4569328
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2095;MJJASON;2.5774653
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2096;MJJASON;1.6842709
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2097;MJJASON;2.2017014
+31;E182601001;La Hayne à Saint-Aybert;746132.0;7039383.0;693500.0;2606500.0;50.4498257;3.6525189;733.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2098;MJJASON;2.5251274
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1976;MJJASON;4.8860188
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1977;MJJASON;5.856574
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1978;MJJASON;7.618287
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1979;MJJASON;6.3812847
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1980;MJJASON;9.260463
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1981;MJJASON;5.5075116
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1982;MJJASON;5.7260995
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1983;MJJASON;4.942523
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1984;MJJASON;3.8097222
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1985;MJJASON;3.619294
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1986;MJJASON;5.7666783
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1987;MJJASON;4.784375
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1988;MJJASON;7.829884
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1989;MJJASON;6.0840626
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1990;MJJASON;5.771956
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1991;MJJASON;4.3748612
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1992;MJJASON;5.733287
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1993;MJJASON;5.683692
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1994;MJJASON;5.71853
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1995;MJJASON;8.65618
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1996;MJJASON;5.648843
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1997;MJJASON;6.042766
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1998;MJJASON;3.5358448
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1999;MJJASON;6.8157754
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2000;MJJASON;3.9844675
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2001;MJJASON;5.1281366
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2002;MJJASON;5.578657
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2003;MJJASON;4.4564815
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2004;MJJASON;9.31015
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2005;MJJASON;5.69228
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2006;MJJASON;2.2942939
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2007;MJJASON;4.6674304
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2008;MJJASON;7.1674423
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2009;MJJASON;6.638484
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2010;MJJASON;7.7923493
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2011;MJJASON;7.7356367
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2012;MJJASON;3.7490046
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2013;MJJASON;6.5179977
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2014;MJJASON;6.1604743
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2015;MJJASON;8.733739
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2016;MJJASON;6.363611
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2017;MJJASON;6.7768984
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2018;MJJASON;6.610521
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2019;MJJASON;4.2830324
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2020;MJJASON;3.7240162
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2021;MJJASON;6.6329746
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2022;MJJASON;6.2788773
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2023;MJJASON;5.582361
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2024;MJJASON;3.0459259
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2025;MJJASON;5.726713
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2026;MJJASON;3.6564698
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2027;MJJASON;5.892824
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2028;MJJASON;4.587303
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2029;MJJASON;5.378021
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2030;MJJASON;2.7401967
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2031;MJJASON;2.6729283
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2032;MJJASON;6.6462502
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2033;MJJASON;8.50441
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2034;MJJASON;7.1862154
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2035;MJJASON;4.6527314
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2036;MJJASON;5.3507986
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2037;MJJASON;4.6590858
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2038;MJJASON;5.9430094
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2039;MJJASON;8.379884
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2040;MJJASON;6.4604397
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2041;MJJASON;4.800255
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2042;MJJASON;6.1892014
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2043;MJJASON;6.3449073
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2044;MJJASON;7.5032177
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2045;MJJASON;5.6843286
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2046;MJJASON;4.933611
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2047;MJJASON;4.4135766
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2048;MJJASON;5.7551155
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2049;MJJASON;5.2740507
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2050;MJJASON;2.2469213
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2051;MJJASON;8.330196
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2052;MJJASON;5.7437267
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2053;MJJASON;6.079838
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2054;MJJASON;6.5070024
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2055;MJJASON;3.2351737
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2056;MJJASON;6.050648
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2057;MJJASON;5.9185996
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2058;MJJASON;5.321759
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2059;MJJASON;4.5698495
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2060;MJJASON;2.7587962
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2061;MJJASON;1.8264699
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2062;MJJASON;3.3104513
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2063;MJJASON;5.600382
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2064;MJJASON;4.329977
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2065;MJJASON;5.9128356
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2066;MJJASON;6.574711
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2067;MJJASON;7.402338
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2068;MJJASON;6.4082522
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2069;MJJASON;5.9325924
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2070;MJJASON;3.4795256
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2071;MJJASON;6.1648498
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2072;MJJASON;4.2101274
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2073;MJJASON;6.7596064
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2074;MJJASON;3.6065161
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2075;MJJASON;5.742361
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2076;MJJASON;5.776296
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2077;MJJASON;4.2232523
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2078;MJJASON;6.670984
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2079;MJJASON;5.954664
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2080;MJJASON;4.4610763
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2081;MJJASON;4.591528
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2082;MJJASON;6.2266436
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2083;MJJASON;6.4446526
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2084;MJJASON;6.1995487
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2085;MJJASON;7.4860764
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2086;MJJASON;6.5517015
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2087;MJJASON;6.585301
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2088;MJJASON;5.5035534
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2089;MJJASON;3.2787848
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2090;MJJASON;3.5591319
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2091;MJJASON;0.97564816
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2092;MJJASON;3.3551736
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2093;MJJASON;1.9234838
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2094;MJJASON;4.2908216
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2095;MJJASON;6.6542706
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2096;MJJASON;3.8040047
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2097;MJJASON;3.6737385
+32;E183041001;L'Escaut à Conde-Sur-l'Escaut;742006.0;7038922.0;689000.0;2606000.0;50.4407318;3.586249;3289.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2098;MJJASON;5.0165625
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1976;MJJASON;3.2921991
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1977;MJJASON;4.0107408
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1978;MJJASON;3.3572686
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1979;MJJASON;3.3032756
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1980;MJJASON;5.2157755
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1981;MJJASON;2.9015625
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1982;MJJASON;3.385023
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1983;MJJASON;3.143912
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1984;MJJASON;3.1733913
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1985;MJJASON;2.9223611
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1986;MJJASON;2.446574
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1987;MJJASON;2.657442
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1988;MJJASON;3.891354
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1989;MJJASON;2.8744214
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1990;MJJASON;3.0302315
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1991;MJJASON;3.028125
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1992;MJJASON;3.0649076
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1993;MJJASON;2.7394445
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1994;MJJASON;3.1504166
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1995;MJJASON;3.8246992
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1996;MJJASON;4.126551
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1997;MJJASON;2.5217593
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1998;MJJASON;2.6268055
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1999;MJJASON;4.0329747
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2000;MJJASON;2.3164468
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2001;MJJASON;3.5659144
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2002;MJJASON;2.9005787
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2003;MJJASON;3.312824
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2004;MJJASON;4.559549
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2005;MJJASON;2.644213
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2006;MJJASON;1.572581
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2007;MJJASON;3.5251389
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2008;MJJASON;3.6816204
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2009;MJJASON;2.8471181
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2010;MJJASON;3.2136574
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2011;MJJASON;3.498125
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2012;MJJASON;2.677905
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2013;MJJASON;3.7519214
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2014;MJJASON;3.2051158
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2015;MJJASON;3.9974537
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2016;MJJASON;3.6609144
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2017;MJJASON;2.8311806
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2018;MJJASON;3.2206018
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2019;MJJASON;2.9090278
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2020;MJJASON;2.7571065
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2021;MJJASON;2.977037
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2022;MJJASON;3.062199
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2023;MJJASON;3.0609722
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2024;MJJASON;2.6249306
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2025;MJJASON;2.7215624
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2026;MJJASON;3.1686807
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2027;MJJASON;2.5428126
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2028;MJJASON;2.735868
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2029;MJJASON;2.7109375
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2030;MJJASON;2.0054977
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2031;MJJASON;2.1638079
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2032;MJJASON;3.0354397
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2033;MJJASON;3.4601157
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2034;MJJASON;2.7519677
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2035;MJJASON;2.570868
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2036;MJJASON;3.1190162
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2037;MJJASON;3.1316667
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2038;MJJASON;4.10588
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2039;MJJASON;3.6445024
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2040;MJJASON;3.1026042
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2041;MJJASON;2.6780787
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2042;MJJASON;3.5925348
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2043;MJJASON;2.822523
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2044;MJJASON;3.4798841
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2045;MJJASON;2.7504861
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2046;MJJASON;2.8568635
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2047;MJJASON;3.0815046
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2048;MJJASON;3.0505323
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2049;MJJASON;2.8865972
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2050;MJJASON;2.3710995
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2051;MJJASON;4.0490627
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2052;MJJASON;2.4560301
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2053;MJJASON;3.0106714
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2054;MJJASON;3.446713
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2055;MJJASON;2.6564584
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2056;MJJASON;4.59088
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2057;MJJASON;3.0000463
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2058;MJJASON;2.2611227
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2059;MJJASON;2.9290392
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2060;MJJASON;2.3359144
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2061;MJJASON;2.610926
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2062;MJJASON;2.6445603
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2063;MJJASON;2.466007
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2064;MJJASON;3.2601852
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2065;MJJASON;2.826412
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2066;MJJASON;2.7705324
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2067;MJJASON;3.810521
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2068;MJJASON;2.730058
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2069;MJJASON;3.2140741
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2070;MJJASON;2.6638079
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2071;MJJASON;3.0987384
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2072;MJJASON;2.5814235
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2073;MJJASON;3.3090742
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2074;MJJASON;2.7232523
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2075;MJJASON;2.6248958
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2076;MJJASON;2.911493
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2077;MJJASON;2.3187153
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2078;MJJASON;3.7776504
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2079;MJJASON;2.9169214
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2080;MJJASON;2.176389
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2081;MJJASON;3.0092478
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2082;MJJASON;2.7704167
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2083;MJJASON;2.6320603
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2084;MJJASON;2.8414469
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2085;MJJASON;3.1649768
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2086;MJJASON;2.8811574
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2087;MJJASON;2.3888657
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2088;MJJASON;2.6872337
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2089;MJJASON;2.7430093
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2090;MJJASON;2.4856482
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2091;MJJASON;0.72222567
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2092;MJJASON;3.0435185
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2093;MJJASON;3.1937616
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2094;MJJASON;3.130602
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2095;MJJASON;2.798206
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2096;MJJASON;2.09728
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2097;MJJASON;2.6280787
+33;E540031001;La Canche à Brimeux;616837.375;7039592.0;565000.0;2606000.0;50.4482377;1.8308383;918.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2098;MJJASON;2.9717824
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1976;MJJASON;3.0586226
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1977;MJJASON;3.445486
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1978;MJJASON;2.786794
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1979;MJJASON;2.6297455
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1980;MJJASON;4.130833
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1981;MJJASON;2.4522917
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1982;MJJASON;2.551794
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1983;MJJASON;2.6311805
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1984;MJJASON;2.7197454
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1985;MJJASON;2.4078703
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1986;MJJASON;2.1461341
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1987;MJJASON;2.1969097
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1988;MJJASON;3.0676851
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1989;MJJASON;2.4025927
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1990;MJJASON;2.4670024
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1991;MJJASON;2.4123263
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1992;MJJASON;2.4882407
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1993;MJJASON;2.3750117
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1994;MJJASON;2.6020718
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1995;MJJASON;3.125706
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1996;MJJASON;3.2164698
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1997;MJJASON;2.2065973
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1998;MJJASON;1.9415857
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;1999;MJJASON;3.227963
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2000;MJJASON;2.026088
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2001;MJJASON;2.7254746
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2002;MJJASON;2.404294
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2003;MJJASON;2.6301851
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2004;MJJASON;3.7381482
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2005;MJJASON;2.3197918
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2006;MJJASON;1.2064468
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2007;MJJASON;2.6133797
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2008;MJJASON;3.0082638
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2009;MJJASON;2.4915857
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2010;MJJASON;2.7002778
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2011;MJJASON;3.0508912
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2012;MJJASON;2.0644677
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2013;MJJASON;3.052419
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2014;MJJASON;2.5561922
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2015;MJJASON;3.4630325
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2016;MJJASON;2.9991782
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2017;MJJASON;2.4467824
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2018;MJJASON;2.7143056
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2019;MJJASON;2.2546413
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2020;MJJASON;2.2073843
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2021;MJJASON;2.5178936
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2022;MJJASON;2.5958333
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2023;MJJASON;2.546551
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2024;MJJASON;2.034433
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2025;MJJASON;2.3315277
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2026;MJJASON;2.5205786
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2027;MJJASON;2.2198958
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2028;MJJASON;2.290949
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2029;MJJASON;2.2821643
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2030;MJJASON;1.5131018
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2031;MJJASON;1.7565973
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2032;MJJASON;2.5831134
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2033;MJJASON;3.0098147
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2034;MJJASON;2.3836575
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2035;MJJASON;2.3271875
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2036;MJJASON;2.3863773
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2037;MJJASON;2.7206366
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2038;MJJASON;2.930625
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2039;MJJASON;3.2492592
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2040;MJJASON;2.5514932
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2041;MJJASON;2.2930324
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2042;MJJASON;3.1026158
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2043;MJJASON;2.417558
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2044;MJJASON;2.9265046
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2045;MJJASON;2.3843055
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2046;MJJASON;2.436736
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2047;MJJASON;2.5188658
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2048;MJJASON;2.6979976
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2049;MJJASON;2.2701042
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2050;MJJASON;1.6339121
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2051;MJJASON;3.4013078
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2052;MJJASON;2.0712385
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2053;MJJASON;2.535648
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2054;MJJASON;2.6984837
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2055;MJJASON;2.1104167
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2056;MJJASON;3.7367709
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2057;MJJASON;2.7262964
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2058;MJJASON;1.9803472
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2059;MJJASON;2.48603
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2060;MJJASON;1.9404514
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2061;MJJASON;1.6473727
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2062;MJJASON;2.3142362
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2063;MJJASON;2.177176
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2064;MJJASON;2.544398
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2065;MJJASON;2.4107406
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2066;MJJASON;2.418669
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2067;MJJASON;3.0744328
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2068;MJJASON;2.409919
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2069;MJJASON;2.7850347
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2070;MJJASON;2.0757291
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2071;MJJASON;2.7262616
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2072;MJJASON;2.2826273
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2073;MJJASON;2.854514
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2074;MJJASON;2.218102
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2075;MJJASON;2.425845
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2076;MJJASON;2.3240857
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2077;MJJASON;2.0047338
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2078;MJJASON;3.0970833
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2079;MJJASON;2.5130787
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2080;MJJASON;1.9012963
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2081;MJJASON;2.4715278
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2082;MJJASON;2.3319676
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2083;MJJASON;2.29772
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2084;MJJASON;2.2063773
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2085;MJJASON;2.7023263
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2086;MJJASON;2.5363774
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2087;MJJASON;2.1351852
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2088;MJJASON;2.3003473
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2089;MJJASON;2.3146875
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2090;MJJASON;2.070486
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2091;MJJASON;0.5798808
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2092;MJJASON;2.4770603
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2093;MJJASON;2.1451504
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2094;MJJASON;2.63728
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2095;MJJASON;2.5027547
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2096;MJJASON;1.716794
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2097;MJJASON;2.139398
+34;E550572001;L'Authie à Dompierre-Sur-Authie;622800.3125;7023549.5;571000.0;2590000.0;50.3046555;1.918714;796.0;from 05-01 to 04-30;E-Fleuves côtiers (Escault, Somme, ...);Hist_rcp85;2098;MJJASON;2.4401042

@@ -1,0 +1,1533 @@
+---
+title: Etude prospective de la sécheresse hydrologique à l'aide des données explore 2 pour le département `r params$code_departement`
+author: "Baptiste ROUSSEL, Lucie CAULIER"
+date: "`r Sys.Date()`"
+output:
+  word_document:
+    toc: true
+  pdf_document: default
+  html_document:
+    toc: true
+    df_print: kable
+    code_folding: hide
+  officedown::rdocx_document:
+    df_print: flexable
+    reference_docx: ../assets/Analyse secheresse 59.docx
+    toc: true
+editor_options:
+  markdown:
+    wrap: 72
+params:
+  code_departement: '80'
+  nb_data_min: 3650
+  seuil: 0.1
+  jours_glissants: 10
+  jours_glissants_2: 3
+  date_debut: "2000-01-01"
+  date_fin: "2024-12-31"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning=FALSE, message=FALSE) 
+```
+
+```{r packages et library}
+# installe les packages non installés et charge tout
+if (!require(pacman)) install.packages("pacman") 
+
+pacman::p_load(tidyverse, readr, dplyr, lubridate, sf, glue, hubeau, readxl, hydroTSM, runner, tictoc, trend, flextable, officer, officedown)
+```
+
+
+```{r fonctions, setup, include=FALSE}
+#installation des fonctions nécessaires
+
+source("../functions/function.R")
+source("../functions/traitement_debits.R")
+
+```
+
+# I) Introduction
+
+La gestion quantitative de la ressource en eau devient un enjeu majeur dans notre actualité. Les tensions sur les usages s’accentuent dans toutes les régions de France. En particulier, des indices de sécheresse hydrologique plus ou moins intenses sont maintenant présents partout sur le territoire, notamment dans la région des Hauts-de-France. Ainsi, une adaptation de la gestion de l'eau devient capitale pour faire face à ces problématiques. 
+Avec le changement climatique,  les effets de cette dernière ne feront probablement qu'empirer, n'impactant que plus sévèrement  les écosystèmes et l'environnement. 
+
+C'est pourquoi analyser les différents indicateurs de sécheresse hydrologique, en l'occurrence le **VCN10** (débit minimal moyen sur 10 jours consécutifs pendant une année donnée) et la **durée de sécheresse**, pour les années à venir s'avère crucial. 
+
+Pour cela, nous utiliserons les données d'**explore 2**, disponibles sur le portail drias-eau (https://www.drias-eau.fr). L'obtention des données par les scientifiques d'explore 2 s'est faite par l'utilisation de différents types de modèles. 
+
+En premier lieu, 9 **modèles hydrologiques** (SIM2, Orchidée, SMASH...) ont été utilisés. Ces derniers sont des outils mathématiques ou informatiques qui simulent le cycle de l’eau dans un bassin versant ou une région donnée. 
+Ensuite, chaque modèle hydrologique est complété par un **modèle climatique global**, couvrant ainsi l'ensemble du globe avec une grande résolution (200-300km). 
+Enfin, pour une précision optimisée, un **modèle climatique régional** est ajouté, d'une résolution plus importante de 12.5km. 
+
+Il apparait donc ici que ces modélisations ne prennent pas en compte les influences artificielles, comme les prélèvements d'eau par les humains. Les débits modélisés par explore 2 sont donc des **débits non influencés**, exempt des perturbations humaines majeures, contrairement aux débits de l'**API Hub'eau**, qui sont des **débits influencés**. En effet, ce sont des mesures directes, donc avec une prise en compte de la modification de l'écoulement par l'influence humaine. 
+
+Cette étude permet de compléter de manière prospective le travail mené en amont sur l'analyse d'indicateurs (VCN10 et durée de sécheresse) pour les différents départements des Hauts-de-France grâce aux données de l'api Hub'eau. 
+En raison des origines influencées et non influencées des données récoltées, elle comprendra aussi une comparaison des résultats historiques des indicateurs VCN10 et durée de sécheresse entre les données influencées de l'API Hub'eau, et les données non influencées explore 2. De cette manière, une idée de la différence entre ces indicateurs permettra d'interpréter les résultats pour le futur de manière plus juste. 
+
+En outre, il a fallu sélectionner les modélisations qui nous intéressaient parmi les nombreuses combinaisons entre projections hydrologiques et climatiques. 
+Dans un premier temps, il s'agit de choisir un modèle hydrologique. Nous avons sélectionné le modèle **SIM2**, ce dernier présentant une particulièrement haute résolution spatiale et une généralisation plus solide à des situations nouvelles ou extrêmes.
+Concernant les modélisations climatiques, nous nous sommes basés sur les décisions des scientifiques d'explore 2. 
+Ces derniers , étant confrontés à tant de modélisations, ont aussi dû en sélectionner. Afin de pouvoir représenter la diversité des futurs possibles,  les incertitudes étant nombreuses, ils ont opté pour des modèles prédisant des changements contrastés. De cette manière, grâce à ces 4 simulations, aussi appelées narratifs, nous décrivons au mieux toute la gamme des projections possibles. 
+
+En résumé, nous allons étudier les indicateurs de sécheresse hydrologique VCN10 et durée de sécheresse pour les stations de la région des Hauts-de-France à l'aide des 4 narratifs : **CNRM-CERFACS-CNRM-CM5 / CNRM-ALADIN63 (changements futurs relativement peu marqués ), ICHEC-EC-EARTH / MOHC-HadREM3-GA7-05 (fort réchauffement et fort assèchement en été), MOHC-HadGEM2-ES / CNRM-ALADIN63 (réchauffement marqué et augmentation des précipitations) et MOHC-HadGEM2-ES / CLMcom-CCLM4-8-17 (fort réchauffement et forts contrastes saisonniers entre précipitations)**. 
+
+
+Nous allons mener ces analyses sur deux jeux de données pour chaque combinaison de modélisations : **historique (1951-2005)** et **RCP 8.5 (2005-2100, avec un scénario d’émissions élevées de gaz à effet de serre)**. 
+
+Ce rapport traite de l’analyse pour le département `r params$code_departement` selon le narratif MOHC-HadGEM2-ES / CNRM-ALADIN63, c’est-à-dire une simulation prévoyant un réchauffement marqué et augmentation des précipitations.
+
+
+```{r}
+#on importe toutes les donnees 
+#choisir les lignes qu'on veut importer en fonction du narratif choisi. 
+#narratif 1 = CNRM-CERFACS-CNRM-CM5 / CNRM-ALADIN63
+#narratif 2 = ICHEC-EC-EARTH / MOHC-HadREM3-GA7-05
+#narratif 3 = MOHC-HadGEM2-ES / CNRM-ALADIN63
+#narratif 4 = MOHC-HadGEM2-ES / CLMcom-CCLM4-8-17
+#il faut donc changer les dièses et adapter la phrase juste au-dessus de ce chunk
+#sim2_1_histo <- read_drias("../raw_data/SIM2_1_histo.txt")
+#sim2_2_histo <- read_drias("../raw_data/SIM2_2_histo.txt")
+#sim2_3_histo <- read_drias("../raw_data/SIM2_3_histo.txt")
+sim2_4_histo <- read_drias("../raw_data/SIM2_4_histo.txt")
+#sim2_1_8.5 <- read_drias("../raw_data/SIM2_1_8.5.txt")
+#sim2_2_8.5 <- read_drias("../raw_data/SIM2_2_8.5.txt")
+#sim2_3_8.5 <- read_drias("../raw_data/SIM2_3_8.5.txt")
+sim2_4_8.5 <- read_drias("../raw_data/SIM2_4_8.5.txt")
+```
+
+```{r}
+#on joint les tableaux histo et 8.5
+sim2_2<- bind_rows(sim2_4_histo, sim2_4_8.5)
+```
+
+```{r, results='hide'}
+#on veut les codes départements pour pouvoir filtrer, mais on ne les a pas dans les données drias. Ils sont présents dans le geopackage fait par Baptiste (dont le csv de base a été récupéré sur le portail drias-eau) donc on importe et on fera une jointure
+# Lire le fichier .gpkg (remplace "chemin_du_fichier.gpkg" par ton chemin)
+geo_data <- st_read("../assets/station_DRIAS_HdF.gpkg", layer = "station_DRIAS_Hdf")
+```
+
+```{r}
+#pour pouvoir faire la jointure, on doit faire cette manipulation avant : sert à retirer la partie géométrique
+df_code_dep <- geo_data %>% 
+  st_drop_geometry()
+```
+
+```{r}
+q_jr_totaux_def <- sim2_2 %>%
+  rename(`code_station` = CodeHydro, 
+         `date_obs_elab` = Date) %>%
+
+  select("code_station", 
+         "date_obs_elab", 
+         "Debit")
+```
+
+```{r}
+#on fait une jointure pour avoir une colonne code_insee (avec les codes des départements) 
+q_jr_totaux_def <- q_jr_totaux_def %>%
+  left_join(df_code_dep, by=("code_station"))
+```
+
+```{r}
+#on ne conserve que les données du département souhaité
+q_jr_totaux_def <- q_jr_totaux_def %>%
+  filter(code_insee == params$code_departement)
+```
+
+# II) Données historiques
+
+Comme expliqué précédemment, nous allons calculer les indicateurs VCN10 et durée de sécheresse pour les données historiques explore 2. Cela nous permettra d'évaluer les différences avec les résultats obtenus grâce aux données de l'API Hub'eau. 
+Ainsi, nous faisons une analyse des indicateurs sur la période 01/01/2000 à 31/12/2024. 
+
+```{r}
+q_jr_totaux_def$date_obs_elab <- as.Date(q_jr_totaux_def$date_obs_elab)
+```
+
+
+```{r}
+# on ne garde que les lignes allant de la date 2000-01-01 à 2024-12-31 pour comparer les données sur la même période 
+q_jr_totaux_def_histo <- q_jr_totaux_def %>%
+  dplyr::filter(date_obs_elab >= as.Date("2000-01-01") & date_obs_elab <= as.Date("2024-12-31"))
+```
+
+## 1) Calcul des seuils de sécheresse
+
+Le calcul des seuils de sécheresse est une étape cruciale dans la gestion des ressources en eau et donc la prévention des impacts négatifs liés à la sécheresse. En effet, les seuils de sécheresse, sur lesquels sont basées les règles de gestion conjoncturelle fixées par arrêté préfectoral à l'échelle départementale, déterminent les différents niveaux à partir desquels des mesures de gestion des ressources en eau peuvent être appliquées (restrictions d'usage notamment).
+Dans cette étude, la sécheresse sera définie comme le débit étant strictement inférieur à un débit seuil de sécheresse établi. Ce seuil a été choisi égal à une fréquence au dépassement du Q90.
+Le "Q90" en hydrologie fait référence à un débit caractéristique des basses eaux d'un cours d'eau. Il s'agit du débit qui est dépassé 90 % du temps, ce qui signifie que pendant 90 % de la période de l’étude, le débit du cours d'eau est supérieur à cette valeur. Le Q90 est un indicateur important pour la gestion des ressources en eau, notamment pour la détermination des débits réservés et la planification de l'utilisation de l'eau en période de sécheresse. Il est calculé à partir des données de débit journalier sur une période de référence, généralement plusieurs dizaines années, afin de fournir une estimation fiable des conditions de basses eaux.
+
+```{r}
+
+# calcul des seuils de sécheresse pour chacune des stations du data frame de débit 
+
+seuils_sech <- calcul_seuils(q_jr_totaux_def_histo, params$seuil) 
+
+```
+
+
+## 2) Calcul des indicateurs de sécheresse
+
+### a) Durée de la sécheresse
+
+La durée de la sécheresse hydrologique peut varier en fonction de plusieurs facteurs, notamment le climat, la saison, la nature du sol et la végétation. La sécheresse hydrologique se caractérise par des niveaux anormalement bas des lacs, rivières, cours d'eau ou nappes souterraines, souvent en raison d'un manque de pluie prolongé ou d'une utilisation excessive des ressources en eau.
+La durée de la sécheresse est ici assimilée au nombre de jours dans l’année présentant un débit strictement inférieur au seuil de sécheresse (Q90) sur une période allant de `r params$date_debut` à `r params$date_fin`. Ce seuil de sécheresse est déterminé dans la partie précédente pour chaque station du département.
+
+```{r}
+q_jr_totaux_def_histo <- q_jr_totaux_def_histo %>%
+  mutate(
+    date_obs_elab = ymd(gsub("_", "-", date_obs_elab)),  # conversion en date
+    annee = year(date_obs_elab)                          # extraction de l'année
+  )
+```
+
+
+```{r, eval=TRUE}
+#duree de secheresse pour toutes les stations de q_jr_totaux_def 
+
+q_jr_totaux_def_histo <- q_jr_totaux_def_histo %>% 
+  left_join(seuils_sech, by=c("code_station", "Nom"))
+```
+
+```{r}
+duree_sech <- q_jr_totaux_def_histo %>% 
+  group_by(code_station, annee) %>%  # regroupement par année 
+  summarise(duree_sech = sum (Debit < Qx)) 
+```
+
+```{r}
+duree_sech %>% 
+  ggplot(aes(x = as.factor(annee), y = duree_sech)) +
+  geom_boxplot(outlier.shape = NA) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  xlab("Année") +
+  ylab("Durée de la sécheresse (en jours)")
+```
+
+*Graphique 1 : Boxplot de la durée de sécheresse en jours*
+
+```{r, eval=TRUE}
+duree_sech_summary <- duree_sech %>%
+  group_by(annee) %>%
+  summarise(med_duree_sech = median(duree_sech))
+
+duree_sech_summary <- duree_sech_summary %>%
+  mutate(group = 1)
+
+ggplot(duree_sech_summary, aes(x = factor(annee), y = med_duree_sech, group = group)) +
+  geom_line(color = "blue") +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  xlab("Année") +
+  ylab("Médiane des durées de sécheresse (en jours)") 
+```
+
+*Graphique 2 : Tendance des durées de sécheresse par année*
+
+### b) VCN`r params$jours_glissants`
+
+Le VCN`r params$jours_glissants` en hydrologie désigne le débit minimum moyen sur
+`r params$jours_glissants` jours consécutifs sur une année. Cet indicateur permet de caractériser les périodes de basses eaux des cours d'eau. Le VCN10 est pertinent pour évaluer la disponibilité minimale en eau sur une courte durée, ce qui est important pour la gestion des ressources en eau, surtout en période de sécheresse. Ils seront
+calculés à partir des débits spécifiques de chaque station (débits réels
+divisées par la surface du bassin versant amont), afin de pouvoir
+comparer ces VCN`r params$jours_glissants` et les agréger. Les surfaces de bassins versants sont prélevés sur le portail drias-eau. 
+
+```{r}
+#sur le portail drias eau, je suis allée récupérer les documents csv des vcn10, dans lesquels nous pouvons aussi trouver la surface des bassins. Je vais utiliser la surface des bassins même s'il y a déjà une colonne vcn10 car j'ai ici besoin de le calculer sur les années histo. 
+#il y a deux csv différents car lorsqu'on les télécharge, nous obtenus : 1csv = 1 lettre correspondant à la première lettre du code de la station.
+#ici, csv pour les stations dont le code commence par E
+#on ouvre le csv et on le traduit en data frame 
+E_1 <- read_delim(
+  file = "../assets/vcn10/E_1.csv",
+  delim = ";",
+  skip = 14,
+  locale = locale(
+    encoding = "UTF-8",
+    decimal_mark = "."  # Tu dis ici que le point est un séparateur décimal
+  ),
+  col_types = cols()  # Laisse R deviner les types automatiquement
+)
+```
+
+```{r}
+#ici, csv pour les stations dont le code commence par F ou H
+#on ouvre les csv et on les traduit en data frame 
+
+FH_1 <- read_delim(
+  file = "../assets/vcn10/FH_1.csv",
+  delim = ";",
+  skip = 15,
+  locale = locale(
+    encoding = "UTF-8",
+    decimal_mark = "."  # Tu dis ici que le point est un séparateur décimal
+  ),
+  col_types = cols()  # Laisse R deviner les types automatiquement
+)
+```
+
+```{r}
+#on assemble les deux data frame
+surf <- bind_rows(E_1, FH_1)
+```
+
+```{r}
+#on ne garde que les colonnes qui nous intéressent
+surf <- surf %>%
+  select("Code_hydro", 
+         "Surface_Bassin")
+```
+
+```{r}
+#on renomme les colonnes
+surf <- surf %>%
+  rename("code_station" = Code_hydro,
+         "surface_bv" = Surface_Bassin)
+```
+
+```{r}
+#on ne garde qu'une fois chaque ligne 
+surf <- surf %>%
+  distinct()
+```
+
+```{r}
+q_jr_totaux_def_histo <-q_jr_totaux_def_histo %>% 
+  left_join(y=surf, by="code_station") %>% 
+  mutate(resultat_obs_elab_spe=Debit/surface_bv) %>% 
+  arrange(date_obs_elab)
+```
+
+```{r}
+#on refiltre les données du département qui nous intéressent
+q_jr_totaux_def_histo <-q_jr_totaux_def_histo %>%
+  filter(code_insee == params$code_departement)
+```
+
+```{r}
+#on change l'unité (l/s/km²) de la colonne pour faciliter l'analyse
+q_jr_totaux_def_histo <- q_jr_totaux_def_histo %>%
+  mutate(resultat_obs_elab_spe =  resultat_obs_elab_spe*1000)
+```
+
+```{r}
+# calcul des VCNx spécifiques annuels pour toutes les stations du data frame q_jr_totaux_def 
+
+VCNx <- VCNx_sta_mult(q_jr_totaux_def_histo, params$jours_glissants) 
+
+VCNx <- VCNx %>% 
+  reduce(rbind) %>% 
+  rename(code_station = code_sta)
+
+codes_dep <- q_jr_totaux_def_histo %>%
+  select(code_station)
+```
+
+```{r, eval=TRUE}
+write.csv(VCNx, "../output/VCN.csv", row.names = FALSE)
+data <- read.csv('../output/VCN.csv')
+
+
+# Calculer la médiane annuelle de VCNx_annuel_spe pour chaque année
+annual_median <- data %>%
+  dplyr::group_by(annee) %>%
+  dplyr::summarise(mediane_VCNx_annuel_spe = median(VCNx_annuel_spe, na.rm = TRUE))
+
+# Tracer l'histogramme avec des barres élargies et une courbe de tendance
+ggplot(annual_median, aes(x = annee, y = mediane_VCNx_annuel_spe)) +
+  geom_bar(stat = 'identity', aes(fill = "Médiane annuelle"), color = 'black', width = 0.8, fill = 'darkgrey') +
+  geom_smooth(aes(color = "Courbe de tendance"), method = 'lm', se = FALSE, linetype = 'dashed') +
+  labs(x = 'Année',
+       y = 'Médiane annuelle des VCN10 (l/s/km²)',
+       fill = "Légende",
+       color = "Légende") +
+  scale_fill_manual(name = "Légende", values = c("Médiane annuelle" = "darkgrey")) +
+  scale_color_manual(name = "Légende", values = c("Courbe de tendance" = "red")) +
+  theme_minimal() +
+  theme(axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        plot.title = element_text(size = 14))
+```
+
+*Graphique 3 : Médiane annuelle des VCN10 pour toutes les stations*
+
+## 3) Tendances de sécheresse
+
+Le but de cette partie est de déterminer si les indicateurs de sécheresse suivent une tendance monotone significative (une tendance monotone fait référence à une séquence ou une fonction qui ne change pas de direction). Une tendance monotone significative peut donc indiquer un changement dans les ressources en eau, influencé par des facteurs tels que le changement climatique, les pratiques de gestion de l'eau ou les modifications de l'utilisation des terres. Dans cette étude, les tendances sont étudiées grâce à un test de Mann-Kendal (tendance monotone significative ou non) et un test de Sen-Theil (pente de la droite de tendance : positive, négative ou nulle, qui détermine s’il y a une dégradation ou une amélioration).
+
+Cependant, il est important de souligner que ces tests sont sensibles à la présence importante de valeurs nulles dans les données. En effet, une présence trop importante de valeurs nulles peut abusément induire une absence de tendance. Il est donc primordial de prendre les résultats de ces statistiques avec prudence, une absence de tendance ne signifiant pas une absence de sécheresse significative, ni une stabilité des conditions hydrologiques.
+
+### a) Tendances sur la durée de sécheresse
+
+```{r, eval=TRUE}
+#tendances sur les durée de sécheresse 
+
+n_duree_sech_by_point <- duree_sech %>% 
+  group_by(code_station) %>% 
+    summarise(n_years = n_distinct(annee))
+
+## au moins 3 données par station pour calculer la tendance 
+
+selected_point_ids <- n_duree_sech_by_point %>% 
+  filter(n_years > 3) %>% 
+  pull(code_station)
+
+MK_duree_sech <- duree_sech %>%
+  filter(!is.na(duree_sech),
+         code_station %in% selected_point_ids) %>% 
+  tester_pente_mk_multi(var_groupe = code_station,
+                        var_x = annee,
+                        var_y = duree_sech) %>% 
+  
+  ## interprétation des tendances
+  mutate(trend = case_when(
+    trend == "Decrease" ~"Amélioration",
+    trend == "Increase" ~"Dégradation",
+    TRUE ~ "Pas de tendance"
+  ))
+
+```
+
+```{r, eval=TRUE}
+# ajout au tableau de tendance du nombre d'années utilisées pour calculer la tendance 
+
+MK_duree_sech <- MK_duree_sech %>% 
+  left_join(n_duree_sech_by_point, by="code_station")
+
+stations_tot <- get_hydrometrie_stations(code_departement = params$code_departement) %>% 
+  select("code_station","Nom"="libelle_site","Type"="type_station","X"= "coordonnee_x_station","Y"= "coordonnee_y_station","Date de fermeture"="date_fermeture_station")
+
+MK_duree_sech_vf <- merge (MK_duree_sech,stations_tot,by="code_station")
+```
+
+```{r, eval=FALSE}
+MK_duree_sech_vf
+```
+
+
+```{r, eval=TRUE}
+#manipulation améliorer le format du data frame
+MK_duree_sech_vf_reduit <- MK_duree_sech_vf %>%
+  select(Nom, code_station, mk_pvalue, sens_slope, trend) %>%
+  rename(`Code de la station` = code_station, 
+         `P value` = mk_pvalue, 
+         `Sens de la pente` = sens_slope,
+         `Tendance` = trend,
+         `Station Hydrometrique` = Nom
+         )
+
+#ordre des lignes 
+MK_duree_sech_vf_reduit$Tendance <- factor(
+  MK_duree_sech_vf_reduit$Tendance,
+  levels = c("Dégradation", "Pas de tendance", "Amélioration")
+)
+
+# Trier le data frame avec les ordres de tendance
+MK_duree_sech_vf_reduit <- MK_duree_sech_vf_reduit[order(MK_duree_sech_vf_reduit$Tendance), ]
+
+df_tri <- MK_duree_sech_vf_reduit %>%
+  arrange(Tendance) %>%
+  mutate(Ligne = row_number()) %>%
+  select(Ligne, everything())
+```
+
+
+```{r, eval=TRUE}
+#manipulations pour améliorer le format du data frame devenu un flextable 
+ft <- df_tri %>%
+  flextable() %>%
+  border(border = fp_border(color = "black"), part = "all") %>%
+  bold(part = "header") %>%
+  bg(bg = "grey95", part = "header") %>%
+  bg(i = ~ Tendance == "Amélioration", j = "Tendance", bg = "#c8e6c9") %>%
+  bg(i = ~ Tendance == "Dégradation", j = "Tendance", bg = "#ffcdd2") %>%
+  bg(i = ~ Tendance == "Pas de tendance", j = "Tendance", bg = "#fff9c4") %>%
+  bg(j = "Ligne", bg = "grey95") %>%
+  width(width = 2.5, unit = "cm") %>%
+  font(fontname = "Times New Roman", part = "all") %>%
+  fontsize(size = 8, part = "all") %>%
+  align(align = "center", part = "all") %>%
+  set_caption(glue(
+  "Tableau 1 : Tendance des durées de sécheresse des stations hydrométriques du département {params$code_departement} entre le 01/01/2000 et le 31/12/2024"
+))
+
+
+ft <- ft %>% 
+  width(width = 2, unit = "cm") %>%
+  fontsize(size = 8) 
+
+ft <- ft %>%
+ width(j = "Station Hydrometrique", width = 6, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Tendance", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "P value", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Ligne", width = 2, unit = "cm")
+
+ft
+
+```
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_duree_sech_vf_reduit)
+
+n_degra <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_1 <- rapp_degra*100
+
+n_pas_tend <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+Les stations avec une dégradation de la durée de sécheresse indiquent que la durée de sécheresse a augmenté depuis les années 2000. Cela représente **`r round(pourc_degra_1, 1)`%** des stations hydrométriques étudiées dans le département du `r params$code_departement`. Ces zones peuvent être particulièrement vulnérables aux sécheresses prolongées, ce qui peut avoir des impacts sur l'agriculture, les ressources en eau et les écosystèmes locaux.
+
+**`r round(pourc_pas_tend, 1)`%** des stations ne montrent pas de tendance significative dans la durée de sécheresse. Ce résultat peut indiquer une stabilité relative dans les conditions hydrologiques de ces zones. Toutefois, les durées des sécheresses pouvant présenter des valeurs nulles, il est possible que les tests de Mann-Kendal et de Sen-Theil donnent des résultats contradictoires (méthodes de calculs différentes, pouvant être perturbées par les valeurs nulles). Dans ce cas, la tendance est notée comme « pas de tendance ».
+
+Pour finir, **`r n_am`** station`r if (n_am > 1) "s"` hydrométrique`r if (n_am > 1) "s"` apparaî`r if (n_am > 1) "ssent" else "t"` en amélioration sur les chroniques de données : *???*.
+
+```{r, eval=TRUE}
+med_duree_sech<-duree_sech %>% 
+  dplyr::group_by(annee) %>% 
+  dplyr::summarise(median_duree_sech=median(duree_sech)) %>% 
+  ungroup()
+
+```
+
+```{r, eval=TRUE}
+#annee<-as.numeric(c(year(as.Date(params$date_debut)):year(as.Date(params$date_fin))))
+#med_duree_sech<-as.numeric(med_duree_sech$median_duree_sech)
+artificial_grp=as.integer(rep(c(1), each=nrow(med_duree_sech)))
+med_duree_sech_2<-cbind(med_duree_sech,artificial_grp)
+```
+
+### b) Tendance sur les VCN`r params$jours_glissants`
+
+Le but de cette partie est de déterminer s'il existe une tendance
+monotone pour les VCN`r params$jours_glissants` des stations du
+département `r params$code_departement`. Ces tendances sont étudiées grâce à un test de Mann-Kendal  et un test de Sen-Theil.
+
+```{r, eval=TRUE}
+n_VCNx_by_point <- VCNx %>% 
+  group_by(code_station) %>% 
+    summarise(n_years = n_distinct(annee))
+
+# at least 3 data per point required for the tests
+selected_point_ids <- n_VCNx_by_point %>% 
+  filter(n_years > 3) %>% 
+  pull(code_station)
+
+MK_VCNx_sta <- VCNx %>%
+  filter(!is.na(VCNx_annuel_spe),
+         code_station %in% selected_point_ids
+         ) %>% 
+  tester_pente_mk_multi(var_groupe = code_station,
+                        var_x = annee,
+                        var_y = VCNx_annuel_spe) %>% 
+  # translate slope into interpretable FBI trend
+  mutate(trend = case_when(
+    trend == "Decrease" ~"Dégradation",
+    trend == "Increase" ~"Amélioration",
+    TRUE ~ "Pas de tendance"
+  ))
+```
+
+```{r, eval=FALSE}
+MK_VCNx_sta
+```
+
+```{r, eval=TRUE}
+# ajout au tableau de tendance du nombre d'années utilisées pour calculer la tendance 
+
+MK_VCNx_sta <- MK_VCNx_sta %>% 
+  left_join(n_VCNx_by_point, by="code_station")
+```
+
+```{r, eval=TRUE}
+#ajout d'une colonne Nom
+MK_VCNx_sta <- merge (MK_VCNx_sta,stations_tot,by="code_station")
+```
+
+```{r, eval=TRUE}
+MK_VCNx_sta_reduit <- MK_VCNx_sta %>%
+  select(Nom, code_station, mk_pvalue, sens_slope, trend) %>%
+  rename(`Code de la station` = code_station, 
+         `P value` = mk_pvalue, 
+         `Sens de la pente` = sens_slope,
+         `Tendance` = trend,
+         `Station Hydrometrique` = Nom
+         )
+
+#ordre des lignes 
+MK_VCNx_sta_reduit$Tendance <- factor(
+  MK_VCNx_sta_reduit$Tendance,
+  levels = c("Dégradation", "Pas de tendance", "Amélioration")
+)
+
+# Trier le data frame avec les ordres de tendance
+MK_VCNx_sta_reduit <- MK_VCNx_sta_reduit[order(MK_VCNx_sta_reduit$Tendance), ]
+
+df_tri <- MK_VCNx_sta_reduit %>%
+  arrange(Tendance) %>%
+  mutate(Ligne = row_number()) %>%
+  select(Ligne, everything())
+```
+
+```{r, eval=TRUE}
+#manipulations pour améliorer le format du data frame devenu un flextable 
+
+ft <- df_tri %>%
+  flextable() %>%
+  border(border = fp_border(color = "black"), part = "all") %>%
+  bold(part = "header") %>%
+  bg(bg = "grey95", part = "header") %>%
+  bg(i = ~ Tendance == "Amélioration", j = "Tendance", bg = "#c8e6c9") %>%
+  bg(i = ~ Tendance == "Dégradation", j = "Tendance", bg = "#ffcdd2") %>%
+  bg(i = ~ Tendance == "Pas de tendance", j = "Tendance", bg = "#fff9c4") %>%
+  bg(j = "Ligne", bg = "grey95") %>%
+  width(width = 2.5, unit = "cm") %>%
+  font(fontname = "Times New Roman", part = "all") %>%
+  fontsize(size = 8, part = "all") %>%
+  align(align = "center", part = "all") %>%
+  set_caption(glue(
+  "Tableau 2 : Tendance du VCN10 sur les stations hydrométriques du département {params$code_departement} entre le {params$date_debut} et le {params$date_fin}"
+))
+
+
+ft <- ft %>% 
+  width(width = 2, unit = "cm") %>%
+  fontsize(size = 8) 
+
+ft <- ft %>%
+ width(j = "Station Hydrometrique", width = 6, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Tendance", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "P value", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Ligne", width = 2, unit = "cm")
+
+ft
+```
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_VCNx_sta_reduit)
+
+n_degra <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_2 <- rapp_degra*100
+
+n_pas_tend <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+Les stations présentant une dégradation des VCN10 montrent une diminution des VCN10 depuis les années 2000, ces stations représentant **`r round(pourc_degra_2, 1)` %** des stations hydrométriques étudiées dans le département `r params$code_departement`. 
+
+Les stations ne montrant pas de tendance significative dans la sévérité de la sécheresse représentent **`r round(pourc_pas_tend, 1)` %** des stations étudiées. Ce résultat peut indiquer une stabilité relative dans les conditions hydrologiques de ces zones.
+
+Pour finir, **`r n_am`** station`r if (n_am > 1) "s"` hydrométrique`r if (n_am > 1) "s"` apparaî`r if (n_am > 1) "ssent" else "t"` en amélioration sur les chroniques de données : *???*.
+
+
+# III) Prospective
+```{r}
+# on ne garde que les lignes allant de la date 2024-12-31 au 2100-31-07  pour faire une analyse prospective des données
+q_jr_totaux_def_prosp <- q_jr_totaux_def %>%
+  dplyr::filter(date_obs_elab >= as.Date("2024-12-31") & date_obs_elab <= as.Date("2100-07-31"))
+```
+
+## 1) Calcul des seuils de sécheresse
+
+De même que pour la partie Historique, nous calculons le Q90 pour les différentes stations. 
+
+```{r}
+# calcul des seuils de sécheresse pour chacune des stations du data frame de débit 
+seuils_sech <- calcul_seuils(q_jr_totaux_def_prosp, params$seuil) 
+```
+
+
+## 2) Calcul des indicateurs de sécheresse
+
+### a) Durée de la sécheresse
+
+```{r}
+q_jr_totaux_def_prosp <- q_jr_totaux_def_prosp %>%
+  mutate(
+    date_obs_elab = ymd(gsub("_", "-", date_obs_elab)),  # conversion en date
+    annee = year(date_obs_elab)                          # extraction de l'année
+  )
+```
+
+
+```{r, eval=TRUE}
+#duree de secheresse pour toutes les stations de q_jr_totaux_def 
+
+q_jr_totaux_def_prosp <- q_jr_totaux_def_prosp %>% 
+  left_join(seuils_sech, by=c("code_station", "Nom"))
+```
+
+```{r}
+duree_sech <- q_jr_totaux_def_prosp %>% 
+  group_by(code_station, annee) %>%  # regroupement par année 
+  summarise(duree_sech = sum (Debit < Qx)) 
+```
+
+```{r, fig.width=18, fig.height=8}
+duree_sech %>% 
+  ggplot(aes(x = as.factor(annee), y = duree_sech)) +
+  geom_boxplot(outlier.shape = NA) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  xlab("Année") +
+  ylab("Durée de la sécheresse (en jours)")
+```
+
+*Graphique 4 : Boxplot de la durée de sécheresse en jours*
+ 
+```{r, fig.width=18, fig.height=8}
+duree_sech_summary <- duree_sech %>%
+  group_by(annee) %>%
+  summarise(med_duree_sech = median(duree_sech))
+
+duree_sech_summary <- duree_sech_summary %>%
+  mutate(group = 1)
+
+ggplot(duree_sech_summary, aes(x = factor(annee), y = med_duree_sech, group = group)) +
+  geom_line(color = "blue") +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  xlab("Année") +
+  ylab("Médiane des durées de sécheresse (en jours)") 
+```
+
+*Graphique 5 : Tendance des durées de sécheresse par année*
+
+### b) VCN`r params$jours_glissants`
+
+```{r}
+q_jr_totaux_def_prosp <-q_jr_totaux_def_prosp %>% 
+  left_join(y=surf, by="code_station") %>% 
+  mutate(resultat_obs_elab_spe=Debit/surface_bv) %>% 
+  arrange(date_obs_elab)
+```
+
+```{r}
+#on refiltre les données du département qui nous intéresse
+q_jr_totaux_def_prosp <-q_jr_totaux_def_prosp %>%
+  filter(code_insee == params$code_departement)
+```
+
+```{r}
+#on change l'unité (l/s/km²) de la colonne pour faciliter l'analyse
+q_jr_totaux_def_prosp <- q_jr_totaux_def_prosp %>%
+  mutate(resultat_obs_elab_spe =  resultat_obs_elab_spe*1000)
+```
+
+```{r}
+# calcul des VCNx spécifiques annuels pour toutes les stations du data frame q_jr_totaux_def 
+
+VCNx <- VCNx_sta_mult(q_jr_totaux_def_prosp, params$jours_glissants) 
+
+VCNx <- VCNx %>% 
+  reduce(rbind) %>% 
+  rename(code_station = code_sta)
+
+codes_dep <- q_jr_totaux_def_prosp %>%
+  select(code_station)
+```
+
+```{r, eval=TRUE}
+write.csv(VCNx, "../output/VCN.csv", row.names = FALSE)
+data <- read.csv('../output/VCN.csv')
+
+
+# Calculer la médiane annuelle de VCNx_annuel_spe pour chaque année
+annual_median <- data %>%
+  dplyr::group_by(annee) %>%
+  dplyr::summarise(mediane_VCNx_annuel_spe = median(VCNx_annuel_spe, na.rm = TRUE))
+
+#LIGNES QUI NE COMPTENT QUE POUR NARRATIF 2 
+annual_median <- data %>%
+  dplyr::filter(annee != 2024) %>%  # retire l'année 2024
+  dplyr::group_by(annee) %>%
+  dplyr::summarise(mediane_VCNx_annuel_spe = median(VCNx_annuel_spe, na.rm = TRUE))
+#ATTENTION
+
+# Tracer l'histogramme avec des barres élargies et une courbe de tendance
+ggplot(annual_median, aes(x = annee, y = mediane_VCNx_annuel_spe)) +
+  geom_bar(stat = 'identity', aes(fill = "Médiane annuelle"), color = 'black', width = 0.8, fill = 'darkgrey') +
+  geom_smooth(aes(color = "Courbe de tendance"), method = 'lm', se = FALSE, linetype = 'dashed') +
+  labs(x = 'Année',
+       y = 'Médiane annuelle des VCN10 (l/s/km²)',
+       fill = "Légende",
+       color = "Légende") +
+  scale_fill_manual(name = "Légende", values = c("Médiane annuelle" = "darkgrey")) +
+  scale_color_manual(name = "Légende", values = c("Courbe de tendance" = "red")) +
+  theme_minimal() +
+  theme(axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        plot.title = element_text(size = 14))
+```
+
+*Graphique 6 : Médiane annuelle des VCN10 pour toutes les stations*
+
+## 3) Tendances de sécheresse
+
+### a) Tendances sur la durée de sécheresse
+
+```{r, eval=TRUE}
+#tendances sur les durée de sécheresse 
+
+n_duree_sech_by_point <- duree_sech %>% 
+  group_by(code_station) %>% 
+    summarise(n_years = n_distinct(annee))
+
+## au moins 3 données par station pour calculer la tendance 
+
+selected_point_ids <- n_duree_sech_by_point %>% 
+  filter(n_years > 3) %>% 
+  pull(code_station)
+
+MK_duree_sech <- duree_sech %>%
+  filter(!is.na(duree_sech),
+         code_station %in% selected_point_ids) %>% 
+  tester_pente_mk_multi(var_groupe = code_station,
+                        var_x = annee,
+                        var_y = duree_sech) %>% 
+  
+  ## interprétation des tendances
+  mutate(trend = case_when(
+    trend == "Decrease" ~"Amélioration",
+    trend == "Increase" ~"Dégradation",
+    TRUE ~ "Pas de tendance"
+  ))
+
+```
+
+```{r, eval=TRUE}
+# ajout au tableau de tendance du nombre d'années utilisées pour calculer la tendance 
+
+MK_duree_sech <- MK_duree_sech %>% 
+  left_join(n_duree_sech_by_point, by="code_station")
+
+stations_tot <- get_hydrometrie_stations(code_departement = params$code_departement) %>% 
+  select("code_station","Nom"="libelle_site","Type"="type_station","X"= "coordonnee_x_station","Y"= "coordonnee_y_station","Date de fermeture"="date_fermeture_station")
+
+MK_duree_sech_vf <- merge (MK_duree_sech,stations_tot,by="code_station")
+```
+
+```{r, eval=FALSE}
+MK_duree_sech_vf
+```
+
+```{r, eval=TRUE}
+#manipulation améliorer le format du data frame
+MK_duree_sech_vf_reduit <- MK_duree_sech_vf %>%
+  select(Nom, code_station, mk_pvalue, sens_slope, trend) %>%
+  rename(`Code de la station` = code_station, 
+         `P value` = mk_pvalue, 
+         `Sens de la pente` = sens_slope,
+         `Tendance` = trend,
+         `Station Hydrometrique` = Nom
+         )
+
+#ordre des lignes 
+MK_duree_sech_vf_reduit$Tendance <- factor(
+  MK_duree_sech_vf_reduit$Tendance,
+  levels = c("Dégradation", "Pas de tendance", "Amélioration")
+)
+
+# Trier le data frame avec les ordres de tendance
+MK_duree_sech_vf_reduit <- MK_duree_sech_vf_reduit[order(MK_duree_sech_vf_reduit$Tendance), ]
+
+df_tri <- MK_duree_sech_vf_reduit %>%
+  arrange(Tendance) %>%
+  mutate(Ligne = row_number()) %>%
+  select(Ligne, everything())
+```
+
+```{r, eval=TRUE}
+#manipulations pour améliorer le format du data frame devenu un flextable 
+ft <- df_tri %>%
+  flextable() %>%
+  border(border = fp_border(color = "black"), part = "all") %>%
+  bold(part = "header") %>%
+  bg(bg = "grey95", part = "header") %>%
+  bg(i = ~ Tendance == "Amélioration", j = "Tendance", bg = "#c8e6c9") %>%
+  bg(i = ~ Tendance == "Dégradation", j = "Tendance", bg = "#ffcdd2") %>%
+  bg(i = ~ Tendance == "Pas de tendance", j = "Tendance", bg = "#fff9c4") %>%
+  bg(j = "Ligne", bg = "grey95") %>%
+  width(width = 2.5, unit = "cm") %>%
+  font(fontname = "Times New Roman", part = "all") %>%
+  fontsize(size = 8, part = "all") %>%
+  align(align = "center", part = "all") %>%
+  set_caption(glue(
+  "Tableau 3 : Tendance des durées de sécheresse des stations hydrométriques du département {params$code_departement} entre le 31/12/2024 et le 31/07/2100"
+))
+
+
+ft <- ft %>% 
+  width(width = 2, unit = "cm") %>%
+  fontsize(size = 8) 
+
+ft <- ft %>%
+ width(j = "Station Hydrometrique", width = 6, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Tendance", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "P value", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Ligne", width = 2, unit = "cm")
+
+ft
+
+```
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_duree_sech_vf_reduit)
+
+n_degra <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_1 <- rapp_degra*100
+
+n_pas_tend <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+Les stations avec une dégradation de la durée de sécheresse indiquent que la durée de sécheresse a augmenté. Cela représente **`r round(pourc_degra_1, 1)`%** des stations hydrométriques étudiées dans le département du `r params$code_departement`. Ces zones peuvent être particulièrement vulnérables aux sécheresses prolongées, ce qui peut avoir des impacts sur l'agriculture, les ressources en eau et les écosystèmes locaux.
+
+**`r round(pourc_pas_tend, 1)`%** des stations ne montrent pas de tendance significative dans la durée de sécheresse. Ce résultat peut indiquer une stabilité relative dans les conditions hydrologiques de ces zones. Toutefois, les durées des sécheresses pouvant présenter des valeurs nulles, il est possible que les tests de Mann-Kendal et de Sen-Theil donnent des résultats contradictoires (méthodes de calculs différentes, pouvant être perturbées par les valeurs nulles). Dans ce cas, la tendance est notée comme « pas de tendance ».
+
+Pour finir, **`r n_am`** station`r if (n_am > 1) "s"` hydrométrique`r if (n_am > 1) "s"` apparaî`r if (n_am > 1) "ssent" else "t"` en amélioration sur les chroniques de données : *???*.
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_duree_sech_vf_reduit)
+
+n_degra <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_1 <- rapp_degra*100
+
+n_pas_tend <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+```{r, eval=TRUE}
+med_duree_sech<-duree_sech %>% 
+  dplyr::group_by(annee) %>% 
+  dplyr::summarise(median_duree_sech=median(duree_sech)) %>% 
+  ungroup()
+
+```
+
+```{r, eval=TRUE}
+#annee<-as.numeric(c(year(as.Date(params$date_debut)):year(as.Date(params$date_fin))))
+#med_duree_sech<-as.numeric(med_duree_sech$median_duree_sech)
+artificial_grp=as.integer(rep(c(1), each=nrow(med_duree_sech)))
+med_duree_sech_2<-cbind(med_duree_sech,artificial_grp)
+```
+
+### b) Tendance sur les VCN`r params$jours_glissants`
+
+```{r, eval=TRUE}
+n_VCNx_by_point <- VCNx %>% 
+  group_by(code_station) %>% 
+    summarise(n_years = n_distinct(annee))
+
+# at least 3 data per point required for the tests
+selected_point_ids <- n_VCNx_by_point %>% 
+  filter(n_years > 3) %>% 
+  pull(code_station)
+
+MK_VCNx_sta <- VCNx %>%
+  filter(!is.na(VCNx_annuel_spe),
+         code_station %in% selected_point_ids
+         ) %>% 
+  tester_pente_mk_multi(var_groupe = code_station,
+                        var_x = annee,
+                        var_y = VCNx_annuel_spe) %>% 
+  # translate slope into interpretable FBI trend
+  mutate(trend = case_when(
+    trend == "Decrease" ~"Dégradation",
+    trend == "Increase" ~"Amélioration",
+    TRUE ~ "Pas de tendance"
+  ))
+```
+
+```{r, eval=FALSE}
+MK_VCNx_sta
+```
+
+```{r, eval=TRUE}
+# ajout au tableau de tendance du nombre d'années utilisées pour calculer la tendance 
+
+MK_VCNx_sta <- MK_VCNx_sta %>% 
+  left_join(n_VCNx_by_point, by="code_station")
+```
+
+```{r, eval=TRUE}
+#ajout d'une colonne Nom
+MK_VCNx_sta <- merge (MK_VCNx_sta,stations_tot,by="code_station")
+```
+
+```{r, eval=TRUE}
+MK_VCNx_sta_reduit <- MK_VCNx_sta %>%
+  select(Nom, code_station, mk_pvalue, sens_slope, trend) %>%
+  rename(`Code de la station` = code_station, 
+         `P value` = mk_pvalue, 
+         `Sens de la pente` = sens_slope,
+         `Tendance` = trend,
+         `Station Hydrometrique` = Nom
+         )
+
+#ordre des lignes 
+MK_VCNx_sta_reduit$Tendance <- factor(
+  MK_VCNx_sta_reduit$Tendance,
+  levels = c("Dégradation", "Pas de tendance", "Amélioration")
+)
+
+# Trier le data frame avec les ordres de tendance
+MK_VCNx_sta_reduit <- MK_VCNx_sta_reduit[order(MK_VCNx_sta_reduit$Tendance), ]
+
+df_tri <- MK_VCNx_sta_reduit %>%
+  arrange(Tendance) %>%
+  mutate(Ligne = row_number()) %>%
+  select(Ligne, everything())
+```
+
+```{r, eval=TRUE}
+#manipulations pour améliorer le format du data frame devenu un flextable 
+
+ft <- df_tri %>%
+  flextable() %>%
+  border(border = fp_border(color = "black"), part = "all") %>%
+  bold(part = "header") %>%
+  bg(bg = "grey95", part = "header") %>%
+  bg(i = ~ Tendance == "Amélioration", j = "Tendance", bg = "#c8e6c9") %>%
+  bg(i = ~ Tendance == "Dégradation", j = "Tendance", bg = "#ffcdd2") %>%
+  bg(i = ~ Tendance == "Pas de tendance", j = "Tendance", bg = "#fff9c4") %>%
+  bg(j = "Ligne", bg = "grey95") %>%
+  width(width = 2.5, unit = "cm") %>%
+  font(fontname = "Times New Roman", part = "all") %>%
+  fontsize(size = 8, part = "all") %>%
+  align(align = "center", part = "all") %>%
+  set_caption(glue(
+  "Tableau 4 : Tendance du VCN10 sur les stations hydrométriques du département {params$code_departement} entre le 31/12/2024 et le 31/07/2100"
+))
+
+
+ft <- ft %>% 
+  width(width = 2, unit = "cm") %>%
+  fontsize(size = 8) 
+
+ft <- ft %>%
+ width(j = "Station Hydrometrique", width = 6, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Tendance", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "P value", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Ligne", width = 2, unit = "cm")
+
+ft
+```
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_VCNx_sta_reduit)
+
+n_degra <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_2 <- rapp_degra*100
+
+n_pas_tend <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+Les stations présentant une dégradation des VCN10 montrent une diminution des VCN10, ces stations représentant **`r round(pourc_degra_2, 1)` %** des stations hydrométriques étudiées dans le département `r params$code_departement`. 
+
+Les stations ne montrant pas de tendance significative dans la sévérité de la sécheresse représentent **`r round(pourc_pas_tend, 1)` %** des stations étudiées. Ce résultat peut indiquer une stabilité relative dans les conditions hydrologiques de ces zones.
+
+Pour finir, **`r n_am`** station`r if (n_am > 1) "s"` hydrométrique`r if (n_am > 1) "s"` apparaî`r if (n_am > 1) "ssent" else "t"` en amélioration sur les chroniques de données : *???*.
+
+
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_VCNx_sta_reduit)
+
+n_degra <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_2 <- rapp_degra*100
+
+n_pas_tend <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+# IV) Historique et prospectif
+
+```{r}
+# on ne garde que les lignes allant de la date 2000-01-01 à 2024-12-31 pour comparer les données sur la même période 
+q_jr_totaux_def_tot <- q_jr_totaux_def %>%
+  dplyr::filter(date_obs_elab >= as.Date("2000-01-01") & date_obs_elab <= as.Date("2100-07-31"))
+```
+
+## 1) Calcul des seuils de sécheresse
+
+De même que pour les parties précédentes, nous calculons le Q90 pour les différentes stations. 
+
+```{r}
+
+# calcul des seuils de sécheresse pour chacune des stations du data frame de débit 
+
+seuils_sech <- calcul_seuils(q_jr_totaux_def_tot, params$seuil) 
+
+```
+
+
+## 2) Calcul des indicateurs de sécheresse
+
+### a) Durée de la sécheresse
+
+```{r}
+q_jr_totaux_def_tot <- q_jr_totaux_def_tot %>%
+  mutate(
+    date_obs_elab = ymd(gsub("_", "-", date_obs_elab)),  # conversion en date
+    annee = year(date_obs_elab)                          # extraction de l'année
+  )
+```
+
+
+```{r, eval=TRUE}
+#duree de secheresse pour toutes les stations de q_jr_totaux_def 
+
+q_jr_totaux_def_tot <- q_jr_totaux_def_tot %>% 
+  left_join(seuils_sech, by=c("code_station", "Nom"))
+```
+
+```{r}
+duree_sech <- q_jr_totaux_def_tot %>% 
+  group_by(code_station, annee) %>%  # regroupement par année 
+  summarise(duree_sech = sum (Debit < Qx)) 
+```
+
+```{r, fig.width=18, fig.height=8}
+duree_sech %>% 
+  ggplot(aes(x = as.factor(annee), y = duree_sech)) +
+  geom_boxplot(outlier.shape = NA) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  xlab("Année") +
+  ylab("Durée de la sécheresse (en jours)")
+```
+
+*Graphique 7 : Boxplot de la durée de sécheresse en jours*
+
+```{r, fig.width=18, fig.height=8}
+duree_sech_summary <- duree_sech %>%
+  group_by(annee) %>%
+  summarise(med_duree_sech = median(duree_sech))
+
+duree_sech_summary <- duree_sech_summary %>%
+  mutate(group = 1)
+
+ggplot(duree_sech_summary, aes(x = factor(annee), y = med_duree_sech, group = group)) +
+  geom_line(color = "blue") +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  xlab("Année") +
+  ylab("Médiane des durées de sécheresse (en jours)") 
+```
+
+*Graphique 8 : Tendance des durées de sécheresse par année*
+
+### b) VCN`r params$jours_glissants`
+
+```{r}
+q_jr_totaux_def_tot <-q_jr_totaux_def_tot %>% 
+  left_join(y=surf, by="code_station") %>% 
+  mutate(resultat_obs_elab_spe=Debit/surface_bv) %>% 
+  arrange(date_obs_elab)
+```
+
+```{r}
+#on refiltre les données du département qui nous intéresse
+q_jr_totaux_def_tot <-q_jr_totaux_def_tot %>%
+  filter(code_insee == params$code_departement)
+```
+
+```{r}
+#on change l'unité (l/s/km²) de la colonne pour faciliter l'analyse
+q_jr_totaux_def_tot <- q_jr_totaux_def_tot %>%
+  mutate(resultat_obs_elab_spe =  resultat_obs_elab_spe*1000)
+```
+
+```{r}
+# calcul des VCNx spécifiques annuels pour toutes les stations du data frame q_jr_totaux_def 
+
+VCNx <- VCNx_sta_mult(q_jr_totaux_def_tot, params$jours_glissants) 
+
+VCNx <- VCNx %>% 
+  reduce(rbind) %>% 
+  rename(code_station = code_sta)
+
+codes_dep <- q_jr_totaux_def_histo %>%
+  select(code_station)
+```
+
+```{r, eval=TRUE}
+write.csv(VCNx, "../output/VCN.csv", row.names = FALSE)
+data <- read.csv('../output/VCN.csv')
+
+
+# Calculer la médiane annuelle de VCNx_annuel_spe pour chaque année
+annual_median <- data %>%
+  dplyr::group_by(annee) %>%
+  dplyr::summarise(mediane_VCNx_annuel_spe = median(VCNx_annuel_spe, na.rm = TRUE))
+
+# Tracer l'histogramme avec des barres élargies et une courbe de tendance
+ggplot(annual_median, aes(x = annee, y = mediane_VCNx_annuel_spe)) +
+  geom_bar(stat = 'identity', aes(fill = "Médiane annuelle"), color = 'black', width = 0.8, fill = 'darkgrey') +
+  geom_smooth(aes(color = "Courbe de tendance"), method = 'lm', se = FALSE, linetype = 'dashed') +
+  labs(x = 'Année',
+       y = 'Médiane annuelle des VCN10 (l/s/km²)',
+       fill = "Légende",
+       color = "Légende") +
+  scale_fill_manual(name = "Légende", values = c("Médiane annuelle" = "darkgrey")) +
+  scale_color_manual(name = "Légende", values = c("Courbe de tendance" = "red")) +
+  theme_minimal() +
+  theme(axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        plot.title = element_text(size = 14))
+```
+
+*Graphique 9 : Médiane annuelle des VCN10 pour toutes les stations*
+
+## 3) Tendances de sécheresse
+
+### a) Tendances sur la durée de sécheresse
+
+```{r, eval=TRUE}
+#tendances sur les durée de sécheresse 
+
+n_duree_sech_by_point <- duree_sech %>% 
+  group_by(code_station) %>% 
+    summarise(n_years = n_distinct(annee))
+
+## au moins 3 données par station pour calculer la tendance 
+
+selected_point_ids <- n_duree_sech_by_point %>% 
+  filter(n_years > 3) %>% 
+  pull(code_station)
+
+MK_duree_sech <- duree_sech %>%
+  filter(!is.na(duree_sech),
+         code_station %in% selected_point_ids) %>% 
+  tester_pente_mk_multi(var_groupe = code_station,
+                        var_x = annee,
+                        var_y = duree_sech) %>% 
+  
+  ## interprétation des tendances
+  mutate(trend = case_when(
+    trend == "Decrease" ~"Amélioration",
+    trend == "Increase" ~"Dégradation",
+    TRUE ~ "Pas de tendance"
+  ))
+
+```
+
+```{r, eval=TRUE}
+# ajout au tableau de tendance du nombre d'années utilisées pour calculer la tendance 
+
+MK_duree_sech <- MK_duree_sech %>% 
+  left_join(n_duree_sech_by_point, by="code_station")
+
+stations_tot <- get_hydrometrie_stations(code_departement = params$code_departement) %>% 
+  select("code_station","Nom"="libelle_site","Type"="type_station","X"= "coordonnee_x_station","Y"= "coordonnee_y_station","Date de fermeture"="date_fermeture_station")
+
+MK_duree_sech_vf <- merge (MK_duree_sech,stations_tot,by="code_station")
+```
+
+```{r, eval=FALSE}
+MK_duree_sech_vf
+```
+
+```{r, eval=TRUE}
+#manipulations pour améliorer le format du data frame devenu un flextable 
+ft <- df_tri %>%
+  flextable() %>%
+  border(border = fp_border(color = "black"), part = "all") %>%
+  bold(part = "header") %>%
+  bg(bg = "grey95", part = "header") %>%
+  bg(i = ~ Tendance == "Amélioration", j = "Tendance", bg = "#c8e6c9") %>%
+  bg(i = ~ Tendance == "Dégradation", j = "Tendance", bg = "#ffcdd2") %>%
+  bg(i = ~ Tendance == "Pas de tendance", j = "Tendance", bg = "#fff9c4") %>%
+  bg(j = "Ligne", bg = "grey95") %>%
+  width(width = 2.5, unit = "cm") %>%
+  font(fontname = "Times New Roman", part = "all") %>%
+  fontsize(size = 8, part = "all") %>%
+  align(align = "center", part = "all") %>%
+  set_caption(glue(
+  "Tableau 5 : Tendance des durées de sécheresse des stations hydrométriques du département {params$code_departement} entre le 01/01/2000 et le 31/12/2100"
+))
+
+
+ft <- ft %>% 
+  width(width = 2, unit = "cm") %>%
+  fontsize(size = 8) 
+
+ft <- ft %>%
+ width(j = "Station Hydrometrique", width = 6, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Tendance", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "P value", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Ligne", width = 2, unit = "cm")
+
+ft
+
+```
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_duree_sech_vf_reduit)
+
+n_degra <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_1 <- rapp_degra*100
+
+n_pas_tend <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_duree_sech_vf_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+Les stations avec une dégradation de la durée de sécheresse indiquent que la durée de sécheresse a augmenté. Cela représente **`r round(pourc_degra_1, 1)`%** des stations hydrométriques étudiées dans le département du `r params$code_departement`. Ces zones peuvent être particulièrement vulnérables aux sécheresses prolongées, ce qui peut avoir des impacts sur l'agriculture, les ressources en eau et les écosystèmes locaux.
+
+**`r round(pourc_pas_tend, 1)`%** des stations ne montrent pas de tendance significative dans la durée de sécheresse. Ce résultat peut indiquer une stabilité relative dans les conditions hydrologiques de ces zones. Toutefois, les durées des sécheresses pouvant présenter des valeurs nulles, il est possible que les tests de Mann-Kendal et de Sen-Theil donnent des résultats contradictoires (méthodes de calculs différentes, pouvant être perturbées par les valeurs nulles). Dans ce cas, la tendance est notée comme « pas de tendance ».
+
+Pour finir, **`r n_am`** station`r if (n_am > 1) "s"` hydrométrique`r if (n_am > 1) "s"` apparaî`r if (n_am > 1) "ssent" else "t"` en amélioration sur les chroniques de données : *???*.
+
+
+### b) Tendance sur les VCN`r params$jours_glissants`
+
+```{r, eval=TRUE}
+n_VCNx_by_point <- VCNx %>% 
+  group_by(code_station) %>% 
+    summarise(n_years = n_distinct(annee))
+
+# at least 3 data per point required for the tests
+selected_point_ids <- n_VCNx_by_point %>% 
+  filter(n_years > 3) %>% 
+  pull(code_station)
+
+MK_VCNx_sta <- VCNx %>%
+  filter(!is.na(VCNx_annuel_spe),
+         code_station %in% selected_point_ids
+         ) %>% 
+  tester_pente_mk_multi(var_groupe = code_station,
+                        var_x = annee,
+                        var_y = VCNx_annuel_spe) %>% 
+  # translate slope into interpretable FBI trend
+  mutate(trend = case_when(
+    trend == "Decrease" ~"Dégradation",
+    trend == "Increase" ~"Amélioration",
+    TRUE ~ "Pas de tendance"
+  ))
+```
+
+```{r, eval=FALSE}
+MK_VCNx_sta
+```
+
+```{r, eval=TRUE}
+# ajout au tableau de tendance du nombre d'années utilisées pour calculer la tendance 
+
+MK_VCNx_sta <- MK_VCNx_sta %>% 
+  left_join(n_VCNx_by_point, by="code_station")
+```
+
+```{r, eval=TRUE}
+#ajout d'une colonne Nom
+MK_VCNx_sta <- merge (MK_VCNx_sta,stations_tot,by="code_station")
+```
+
+```{r, eval=TRUE}
+MK_VCNx_sta_reduit <- MK_VCNx_sta %>%
+  select(Nom, code_station, mk_pvalue, sens_slope, trend) %>%
+  rename(`Code de la station` = code_station, 
+         `P value` = mk_pvalue, 
+         `Sens de la pente` = sens_slope,
+         `Tendance` = trend,
+         `Station Hydrometrique` = Nom
+         )
+
+#ordre des lignes 
+MK_VCNx_sta_reduit$Tendance <- factor(
+  MK_VCNx_sta_reduit$Tendance,
+  levels = c("Dégradation", "Pas de tendance", "Amélioration")
+)
+
+# Trier le data frame avec les ordres de tendance
+MK_VCNx_sta_reduit <- MK_VCNx_sta_reduit[order(MK_VCNx_sta_reduit$Tendance), ]
+
+df_tri <- MK_VCNx_sta_reduit %>%
+  arrange(Tendance) %>%
+  mutate(Ligne = row_number()) %>%
+  select(Ligne, everything())
+```
+
+```{r, eval=TRUE}
+#manipulations pour améliorer le format du data frame devenu un flextable 
+
+ft <- df_tri %>%
+  flextable() %>%
+  border(border = fp_border(color = "black"), part = "all") %>%
+  bold(part = "header") %>%
+  bg(bg = "grey95", part = "header") %>%
+  bg(i = ~ Tendance == "Amélioration", j = "Tendance", bg = "#c8e6c9") %>%
+  bg(i = ~ Tendance == "Dégradation", j = "Tendance", bg = "#ffcdd2") %>%
+  bg(i = ~ Tendance == "Pas de tendance", j = "Tendance", bg = "#fff9c4") %>%
+  bg(j = "Ligne", bg = "grey95") %>%
+  width(width = 2.5, unit = "cm") %>%
+  font(fontname = "Times New Roman", part = "all") %>%
+  fontsize(size = 8, part = "all") %>%
+  align(align = "center", part = "all") %>%
+  set_caption(glue(
+  "Tableau 6 : Tendance du VCN10 sur les stations hydrométriques du département {params$code_departement} entre le 01/01/2000 et le 31/12/2100"
+))
+
+
+ft <- ft %>% 
+  width(width = 2, unit = "cm") %>%
+  fontsize(size = 8) 
+
+ft <- ft %>%
+ width(j = "Station Hydrometrique", width = 6, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Tendance", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "P value", width = 3, unit = "cm")
+
+ft <- ft %>%
+ width(j = "Ligne", width = 2, unit = "cm")
+
+ft
+```
+
+```{r, results = "hide"}
+#calcul du pourcentage de stations dont la tendance est dégradation
+
+n_tot <- nrow(MK_VCNx_sta_reduit)
+
+n_degra <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Dégradation')
+n_degra <- nrow(n_degra)
+rapp_degra <- n_degra/n_tot
+pourc_degra_2 <- rapp_degra*100
+
+n_pas_tend <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Pas de tendance')
+n_pas_tend <- nrow(n_pas_tend)
+rapp_pas_tend <- n_pas_tend/n_tot
+pourc_pas_tend <- rapp_pas_tend*100
+
+n_am <- MK_VCNx_sta_reduit %>%
+  filter(Tendance == 'Amélioration')
+n_am <- nrow(n_am)
+```
+
+Les stations présentant une dégradation des VCN10 montrent une diminution des VCN10, ces stations représentant **`r round(pourc_degra_2, 1)` %** des stations hydrométriques étudiées dans le département `r params$code_departement`. 
+
+Les stations ne montrant pas de tendance significative dans la sévérité de la sécheresse représentent **`r round(pourc_pas_tend, 1)` %** des stations étudiées. Ce résultat peut indiquer une stabilité relative dans les conditions hydrologiques de ces zones.
+
+Pour finir, **`r n_am`** station`r if (n_am > 1) "s"` hydrométrique`r if (n_am > 1) "s"` apparaî`r if (n_am > 1) "ssent" else "t"` en amélioration sur les chroniques de données : *???*.
+
+
+
